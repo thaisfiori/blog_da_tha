@@ -1,15 +1,5 @@
-# This file is responsible for configuring your umbrella
-# and **all applications** and their dependencies with the
-# help of Mix.Config.
-#
-# Note that all applications in your umbrella share the
-# same configuration and dependencies, which is why they
-# all use the same configuration file. If you want different
-# configurations or dependencies per app, it is best to
-# move said applications out of the umbrella.
-use Mix.Config
+import Config
 
-# Configure Mix tasks and generators
 config :blog_da_tha,
   ecto_repos: [BlogDaTha.Repo]
 
@@ -17,7 +7,7 @@ config :blog_da_tha_web,
   ecto_repos: [BlogDaTha.Repo],
   generators: [context_app: :blog_da_tha, binary_id: true]
 
-# Configures the endpoint
+
 config :blog_da_tha_web, BlogDaThaWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "5kvRDoWr9xSP6eKTB9wYr6nlYRcfw0+HxRAth13MLHW5ayIi+UNAxxZWiZwsWA+S",
@@ -25,14 +15,13 @@ config :blog_da_tha_web, BlogDaThaWeb.Endpoint,
   pubsub_server: BlogDaTha.PubSub,
   live_view: [signing_salt: "Y43hUYwb"]
 
-# Configures Elixir's Logger
+
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Use Jason for JSON parsing in Phoenix
+
 config :phoenix, :json_library, Jason
 
-# Import environment specific config. This must remain at the bottom
-# of this file so it overrides the configuration defined above.
+
 import_config "#{Mix.env()}.exs"
