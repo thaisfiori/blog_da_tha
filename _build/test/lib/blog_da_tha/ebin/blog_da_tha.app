@@ -1,0 +1,9 @@
+{application,blog_da_tha,
+             [{applications,[kernel,stdlib,elixir,logger,runtime_tools,
+                             phoenix_pubsub,ecto_sql,postgrex,jason]},
+              {description,"blog_da_tha"},
+              {modules,['Elixir.BlogDaTha','Elixir.BlogDaTha.Application',
+                        'Elixir.BlogDaTha.DataCase','Elixir.BlogDaTha.Repo']},
+              {registered,[]},
+              {vsn,"0.1.0"},
+              {mod,{'Elixir.BlogDaTha.Application',[]}}]}.
